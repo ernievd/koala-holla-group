@@ -30,12 +30,12 @@ function getKoalas() {
                     // Define a button for transfer
                     transferButton = '<button class="transferButton btn btn-info">Ready for Transfer</button>';
                 }
-                let $listItem = $('<li class="koalaItem jumbotron" data-id="' + koala.id + '">');
-                $listItem.append('<h2 class="name">' + koala.name + '</h2>');
-                $listItem.append(`<p class="age">Age: ${koala.age} </p>`);
-                $listItem.append('<p class="gender">Gender: ' + koala.gender + '</p>');
-                $listItem.append('<p class="transferrable">Ready to Transfer? ' + koala.ready_to_transfer + '</p>');
-                $listItem.append('<p class="notes">Notes: ' + koala.notes + '</p>');
+                let $listItem = $(`<li class="koalaItem jumbotron" data-id="${koala.id}">`);
+                $listItem.append(`<h2 class="name" data-name="${koala.name}">${koala.name}</h2>`);
+                $listItem.append(`<p class="age" data-age="${koala.age}">Age: ${koala.age} </p>`);
+                $listItem.append(`<p class="gender" data-gender="${koala.gender}">Gender: ' + ${koala.gender} + '</p>`);
+                $listItem.append(`<p class="transferrable" data-transfer="${koala.ready_to_transfer}">Ready to Transfer? ' + ${koala.ready_to_transfer} + '</p>`);
+                $listItem.append(`<p class="notes" data-notes="${koala.notes}">Notes: ' + ${koala.notes} + '</p>`);
                 $listItem.append(transferButton);
                 $listItem.append('<button class="deleteButton btn btn-info">Delete</button>');
                 $listItem.append('<button class="editButton btn btn-info">Edit</button>');
@@ -98,14 +98,25 @@ function deleteKoala() {
 
 function editKoala() {
     let koalaName = $(this).parents('.koalaItem').find('.name').text();
+    $(this).parents('.koalaItem').find('.name').replaceWith(`<input value=${koalaName} />`);
+
+    let koalaAge = $(this).parents('.koalaItem').find('.age').data('age');
+    $(this).parents('.koalaItem').find('.age').replaceWith(`<input value="${koalaAge}" />`);
+
+    let koalaGender = $(this).parents('.koalaItem').find('.gender').text();
+    $(this).parents('.koalaItem').find('.gender').replaceWith(`<input value=${koalaGender} />`);
+
+    let koalaTransfer = $(this).parents('.koalaItem').find('.transferrable').text();
+    $(this).parents('.koalaItem').find('.transferrable').replaceWith(`<input value=${koalaTransfer} />`);
     
-    console.log('existing koalaName', koalaName);
-    
-    let editedKoala = {
-        name: $('#koalaName').val(),
-        gender: $('#koalaGender').val(),
-        age: $('#koalaAge').val(),
-        transferrable: $('#readyToTransfer').val(),
-        notes: $('#koalaNotes').val() 
-    }
+    let koalaNotes = $(this).parents('.koalaItem').find('.notes').text();
+    $(this).parents('.koalaItem').find('.notes').replaceWith(`<input value=${koalaNotes} />`);
+
+    // let editedKoala = {
+    //     name: $('#koalaName').val(),
+    //     gender: $('#koalaGender').val(),
+    //     age: $('#koalaAge').val(),
+    //     transferrable: $('#readyToTransfer').val(),
+    //     notes: $('#koalaNotes').val() 
+    // }
 }
