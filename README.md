@@ -16,7 +16,7 @@
 - [x] Initialize server
 - [x] Establish routes directory and setup
 - [x] Create modules/pool file
-- [x] Add pg and pool const's
+- [x] Add pg and pool consts
 
 ### DOM
 - [x] Basic DOM input/display setup
