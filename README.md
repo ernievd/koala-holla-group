@@ -10,7 +10,7 @@
     - [ ] Add Koalas
 
 ### Initialization/Setup
-- [ ] Setup files, client side and server side
+- [x] Setup files, client side and server side
 - [ ] Node install, package.json
 
 ### DOM
