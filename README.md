@@ -15,7 +15,7 @@
     - [x] `npm install jquery pg express body-parser --save`
 
 ### DOM
-- [ ] Basic DOM input/display setup
+- [x] Basic DOM input/display setup
 
 ### Displaying Koalas
 - [ ] GET (client side and routes) koalas data from database
