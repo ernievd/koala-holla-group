@@ -7,7 +7,7 @@
 - [x] Import client data
 - [ ] Create web app - Base mode
     - [ ] Displays Koalas
-    - [ ] Add Koalas
+    - [x] Add Koalas
 
 ### Initialization/Setup
 - [x] Setup files, client side and server side
@@ -26,5 +26,5 @@
 - [ ] Display on DOM
 
 ### Adding Koalas
-- [ ] POST (client side and routes) koalas to the database
-- [ ] Update DOM with new koalas
+- [x] POST (client side and routes) koalas to the database
+- [x] Update DOM with new koalas

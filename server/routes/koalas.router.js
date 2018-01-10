@@ -17,4 +17,19 @@ router.get('/', function(req, res){
     });
 });
 
+router.post('/', function(req, res) {
+    const queryText = 'INSERT INTO koalas(name, gender, age, ready_to_transfer, notes) VALUES($1, $2, $3, $4, $5)';
+    pool.query(queryText, [req.body.name, req.body.gender, req.body.age, req.body.transferrable, req.body.notes])
+    // runs on successful query
+    .then((result) => {
+        //console.log('query results: ', result);            
+        res.send(201);
+    })
+    // error handling
+    .catch((err) => {
+        console.log('error making select query:', err);
+        res.sendStatus(500);
+    });
+});
+
 module.exports = router;
