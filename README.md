@@ -2,3 +2,5 @@
 
 ## TODO
 - [ ] Make all the things! 
+
+- [ ] Scope the work!
