@@ -32,10 +32,10 @@ function getKoalas() {
                 }
                 let $listItem = $(`<li class="koalaItem jumbotron" data-id="${koala.id}">`);
                 $listItem.append(`<h2 class="name" data-name="${koala.name}">${koala.name}</h2>`);
-                $listItem.append(`<p class="age" data-age="${koala.age}">Age: ${koala.age} </p>`);
-                $listItem.append(`<p class="gender" data-gender="${koala.gender}">Gender: ' + ${koala.gender} + '</p>`);
-                $listItem.append(`<p class="transferrable" data-transfer="${koala.ready_to_transfer}">Ready to Transfer? ' + ${koala.ready_to_transfer} + '</p>`);
-                $listItem.append(`<p class="notes" data-notes="${koala.notes}">Notes: ' + ${koala.notes} + '</p>`);
+                $listItem.append(`<p class="age" data-age="${koala.age}">Age: ${koala.age}</p>`);
+                $listItem.append(`<p class="gender" data-gender="${koala.gender}">Gender: ${koala.gender}</p>`);
+                $listItem.append(`<p class="transferrable" data-transfer="${koala.ready_to_transfer}">Ready to Transfer? ${koala.ready_to_transfer}</p>`);
+                $listItem.append(`<p class="notes" data-notes="${koala.notes}">Notes: ${koala.notes} </p>`);
                 $listItem.append(transferButton);
                 $listItem.append('<button class="deleteButton btn btn-info">Delete</button>');
                 $listItem.append('<button class="editButton btn btn-info">Edit</button>');
