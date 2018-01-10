@@ -11,7 +11,8 @@
 
 ### Initialization/Setup
 - [x] Setup files, client side and server side
-- [ ] Node install, package.json
+- [x] Node install, package.json
+    - [x] `npm install jquery pg express body-parser --save`
 
 ### DOM
 - [ ] Basic DOM input/display setup
