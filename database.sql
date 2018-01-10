@@ -1,0 +1,8 @@
+CREATE TABLE koalas (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(100) NOT NULL,
+	gender VARCHAR(1) NOT NULL,
+	age INT NOT NULL,
+	ready_to_transfer BOOLEAN NOT NULL,
+	notes VARCHAR(255) DEFAULT 'None'
+);

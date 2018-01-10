@@ -1,9 +1,9 @@
 # koala-holla-group
 
 ## TODO
-- [ ] Create a database koala_holla
-- [ ] Create a table koala
-    - [ ] Create structure, export file as database.sql
+- [x] Create a database `koala_holla`
+- [x] Create a table `koalas`
+    - [x] Create structure, export file as database.sql
 - [ ] Import client data
 - [ ] Create web app - Base mode
     - [ ] Displays Koalas
