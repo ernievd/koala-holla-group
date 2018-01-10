@@ -32,4 +32,19 @@ router.post('/', function(req, res) {
     });
 });
 
+router.put('/:id', function(req, res){
+    const queryText = 'UPDATE koalas SET ready_to_transfer=$1 WHERE id=$2;';
+    pool.query(queryText, [req.body.ready_to_transfer, req.params.id])
+    // runs on successful query
+    .then((result) => {
+        //console.log('query results: ', result);            
+        res.send(200);
+    })
+    // error handling
+    .catch((err) => {
+        console.log('error making select query:', err);
+        res.sendStatus(500);
+    });
+});
+
 module.exports = router;

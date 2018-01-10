@@ -28,3 +28,14 @@
 ### Adding Koalas
 - [x] POST (client side and routes) koalas to the database
 - [x] Update DOM with new koalas
+
+## HARD MODE 
+- [x] Ready to Transfer button to update status
+    -  [x] Client - button for only "No" on Ready to Transfer
+        - [x] When clicked, PUT request to change `ready_to_transfer` to "Yes" 
+    - [x] Routes - matching PUT to update database
+- [ ] Add Delete option to Koala row
+    - [ ] Client - button for "Delete" for each koala
+        - [ ] When clicked, DELETE request to remove from database
+    - [ ] Routes - matching DELETE to update database
+- [ ] Bootstrap the things
