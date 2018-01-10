@@ -34,8 +34,14 @@
     -  [x] Client - button for only "No" on Ready to Transfer
         - [x] When clicked, PUT request to change `ready_to_transfer` to "Yes" 
     - [x] Routes - matching PUT to update database
-- [ ] Add Delete option to Koala row
+- [x] Add Delete option to Koala row
     - [x] Client - button for "Delete" for each koala
         - [x] When clicked, DELETE request to remove from database
     - [x] Routes - matching DELETE to update database
-- [ ] Bootstrap the things
+- [x] Bootstrap the things
+
+## PRO MODE
+- [ ] Edit information for existing koalas
+    - [ ] Client side - Edit button that converts list elements to input elements with `value` equal to that elements text
+    - [ ] Add a submit button
+        - [ ] On submit, PUT request to update database
