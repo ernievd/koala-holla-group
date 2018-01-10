@@ -9,6 +9,7 @@ function readySetGo() {
     $('#addKoala').on('click', addKoalas);
     $('#koalaList').on('click', '.transferButton', updateTransferStatus);
     $('#koalaList').on('click', '.deleteButton', deleteKoala);
+    $('#koalaList').on('click', '.editButton', editKoala);
 }
 
 function getKoalas() {
@@ -30,13 +31,14 @@ function getKoalas() {
                     transferButton = '<button class="transferButton btn btn-info">Ready for Transfer</button>';
                 }
                 let $listItem = $('<li class="koalaItem jumbotron" data-id="' + koala.id + '">');
-                $listItem.append('<h2>' + koala.name + '</h2>');
+                $listItem.append('<h2 class="name">' + koala.name + '</h2>');
                 $listItem.append(`<p class="age">Age: ${koala.age} </p>`);
                 $listItem.append('<p class="gender">Gender: ' + koala.gender + '</p>');
                 $listItem.append('<p class="transferrable">Ready to Transfer? ' + koala.ready_to_transfer + '</p>');
                 $listItem.append('<p class="notes">Notes: ' + koala.notes + '</p>');
                 $listItem.append(transferButton);
                 $listItem.append('<button class="deleteButton btn btn-info">Delete</button>');
+                $listItem.append('<button class="editButton btn btn-info">Edit</button>');
                 $('#koalaList').prepend($listItem);
             }
         }
@@ -59,6 +61,9 @@ function addKoalas() {
         success: function(response) {
             console.log('response:', response);
             getKoalas();
+        },
+        error: function(response) {
+            alert('Fill out all input fields, you silly koala person.');
         }
     });
 }
@@ -89,4 +94,18 @@ function deleteKoala() {
             getKoalas();
         }
     });
+}
+
+function editKoala() {
+    let koalaName = $(this).parents('.koalaItem').find('.name').text();
+    
+    console.log('existing koalaName', koalaName);
+    
+    let editedKoala = {
+        name: $('#koalaName').val(),
+        gender: $('#koalaGender').val(),
+        age: $('#koalaAge').val(),
+        transferrable: $('#readyToTransfer').val(),
+        notes: $('#koalaNotes').val() 
+    }
 }

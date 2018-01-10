@@ -52,3 +52,7 @@ button + button {
     margin: 0;
     text-align: center;
 }
+
+.address {
+    color: #17a2b8;
+}

@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 router.get('/', function(req, res){
-    const queryText = 'SELECT * FROM koalas';
+    const queryText = 'SELECT * FROM koalas ORDER BY id';
     pool.query(queryText)
     // runs on successful query
     .then((result) => {
