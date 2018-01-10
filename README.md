@@ -35,7 +35,7 @@
         - [x] When clicked, PUT request to change `ready_to_transfer` to "Yes" 
     - [x] Routes - matching PUT to update database
 - [ ] Add Delete option to Koala row
-    - [ ] Client - button for "Delete" for each koala
-        - [ ] When clicked, DELETE request to remove from database
-    - [ ] Routes - matching DELETE to update database
+    - [x] Client - button for "Delete" for each koala
+        - [x] When clicked, DELETE request to remove from database
+    - [x] Routes - matching DELETE to update database
 - [ ] Bootstrap the things

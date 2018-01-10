@@ -8,6 +8,7 @@ function readySetGo() {
     // Event Listeners
     $('#addKoala').on('click', addKoalas);
     $('#koalaList').on('click', '.transferButton', updateTransferStatus);
+    $('#koalaList').on('click', '.deleteButton', deleteKoala);
 }
 
 function getKoalas() {
@@ -35,6 +36,7 @@ function getKoalas() {
                 $listItem.append('<p class="transferrable">Ready to Transfer? ' + koala.ready_to_transfer + '</p>');
                 $listItem.append('<p class="notes">Notes: ' + koala.notes + '</p>');
                 $listItem.append(transferButton);
+                $listItem.append('<button class="deleteButton">Delete</button>');
                 $('#koalaList').prepend($listItem);
             }
         }
@@ -74,5 +76,17 @@ function updateTransferStatus() {
             getKoalas();
         }
     });
-    
+}
+
+function deleteKoala() {
+    const buttonId = $(this).parents('.koalaItem').data('id');
+
+    $.ajax({
+        method: 'DELETE',
+        url: '/koalas/' + buttonId,
+        success: function(response) {
+            console.log('response', response);
+            getKoalas();
+        }
+    });
 }

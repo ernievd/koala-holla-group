@@ -47,4 +47,19 @@ router.put('/:id', function(req, res){
     });
 });
 
+router.delete('/:id', function(req, res){
+    const queryText = 'DELETE FROM koalas WHERE id=$1';
+    pool.query(queryText, [req.params.id])
+    // runs on successful query
+    .then((result) => {
+        //console.log('query results: ', result);            
+        res.send(200);
+    })
+    // error handling
+    .catch((err) => {
+        console.log('error making select query:', err);
+        res.sendStatus(500);
+    });
+});
+
 module.exports = router;
