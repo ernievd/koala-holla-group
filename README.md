@@ -4,7 +4,7 @@
 - [x] Create a database `koala_holla`
 - [x] Create a table `koalas`
     - [x] Create structure, export file as database.sql
-- [ ] Import client data
+- [x] Import client data
 - [ ] Create web app - Base mode
     - [ ] Displays Koalas
     - [ ] Add Koalas
