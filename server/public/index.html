@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="vendors/jquery.min.js"></script>
     <script src="scripts/client.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <title>Koala Holla</title>
 </head>
-<body>
+<body class="container">
     <h1>Koala Holla</h1>
     <input type="text" placeholder="Name" id="koalaName" />
     <input type="text" placeholder="Gender" id="koalaGender" />
@@ -20,7 +22,7 @@
         <option value="N">No</option>
     </select>
     <textarea id="koalaNotes" cols="30" rows="10" placeholder="Notes"></textarea>
-    <button id="addKoala">Add Koala</button>
+    <button id="addKoala" class="btn btn-info">Add Koala</button>
     <ul id="koalaList"></ul>
 </body>
 </html>

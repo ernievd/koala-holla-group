@@ -27,16 +27,16 @@ function getKoalas() {
                 } else {
                     koala.ready_to_transfer = "No";
                     // Define a button for transfer
-                    transferButton = '<button class="transferButton">Ready for Transfer</button>';
+                    transferButton = '<button class="transferButton btn btn-info">Ready for Transfer</button>';
                 }
-                let $listItem = $('<li class="koalaItem" data-id="' + koala.id + '">');
+                let $listItem = $('<li class="koalaItem jumbotron" data-id="' + koala.id + '">');
                 $listItem.append('<h2>' + koala.name + '</h2>');
                 $listItem.append(`<p class="age">Age: ${koala.age} </p>`);
                 $listItem.append('<p class="gender">Gender: ' + koala.gender + '</p>');
                 $listItem.append('<p class="transferrable">Ready to Transfer? ' + koala.ready_to_transfer + '</p>');
                 $listItem.append('<p class="notes">Notes: ' + koala.notes + '</p>');
                 $listItem.append(transferButton);
-                $listItem.append('<button class="deleteButton">Delete</button>');
+                $listItem.append('<button class="deleteButton btn btn-info">Delete</button>');
                 $('#koalaList').prepend($listItem);
             }
         }
