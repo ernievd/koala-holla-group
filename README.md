@@ -5,8 +5,8 @@
 - [x] Create a table `koalas`
     - [x] Create structure, export file as database.sql
 - [x] Import client data
-- [ ] Create web app - Base mode
-    - [ ] Displays Koalas
+- [x] Create web app - Base mode
+    - [x] Displays Koalas
     - [x] Add Koalas
 
 ### Initialization/Setup
@@ -23,7 +23,7 @@
 
 ### Displaying Koalas
 - [x] GET (client side and routes) koalas data from database
-- [ ] Display on DOM
+- [x] Display on DOM
 
 ### Adding Koalas
 - [x] POST (client side and routes) koalas to the database
