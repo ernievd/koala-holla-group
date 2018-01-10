@@ -22,7 +22,7 @@
 - [x] Basic DOM input/display setup
 
 ### Displaying Koalas
-- [ ] GET (client side and routes) koalas data from database
+- [x] GET (client side and routes) koalas data from database
 - [ ] Display on DOM
 
 ### Adding Koalas
