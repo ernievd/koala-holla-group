@@ -2,6 +2,22 @@ body {
     font-family: 'Merriweather', serif;
 }
 
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
 input,
 select,
 textarea {
@@ -30,4 +46,9 @@ button + button {
     list-style: none;
     padding: 0;
     margin: 10px 0 0;
+}
+
+.address p {
+    margin: 0;
+    text-align: center;
 }
