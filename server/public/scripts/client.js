@@ -118,11 +118,12 @@ function editKoala() {
     let koalaNotes = $koalaBlock.find('.notes').text();
     $koalaBlock.find('.notes').replaceWith(`<p>Notes:</p><input class="new-notes" value="${koalaNotes}" />`);
     
-    // call toggleKoalaButtons
-    
     // add a Submit button
     $koalaBlock.append(`<button class="btn btn-info submitButton">Submit</button>`);
 
+    // show Ready for Transfer, Delete buttons, and Edit
+    $('.editButton, .deleteButton, .transferButton').hide();
+    
     // TODO later: Decide on behavior for multiple edit buttons pressed
 }
 
@@ -142,9 +143,9 @@ function submitEditedKoala() {
         transferrable: $koalaBlock.find('.new-transferrable').val(),
         notes: $koalaBlock.find('.new-notes').val() 
     }
-    // call toggleKoalaButtons
 
-    // show Ready for Transfer, Delete buttons, 
+    // show Ready for Transfer, Delete buttons, and Edit
+    $('.editButton, .deleteButton, .transferButton').show();
 
     // PUT request to update the koala with editedKoala object
     console.log('editedKoala.id', editedKoala);
