@@ -7,7 +7,7 @@ router.get('/', function(req, res){
     pool.query(queryText)
     // runs on successful query
     .then((result) => {
-        console.log('query results: ', result);            
+        //console.log('query results: ', result);            
         res.send(result.rows);
     })
     // error handling
@@ -35,6 +35,23 @@ router.post('/', function(req, res) {
 router.put('/:id', function(req, res){
     const queryText = 'UPDATE koalas SET ready_to_transfer=$1 WHERE id=$2;';
     pool.query(queryText, [req.body.ready_to_transfer, req.params.id])
+    // runs on successful query
+    .then((result) => {
+        //console.log('query results: ', result);            
+        res.send(200);
+    })
+    // error handling
+    .catch((err) => {
+        console.log('error making select query:', err);
+        res.sendStatus(500);
+    });
+});
+
+router.put('/update/:id', function(req, res){
+    console.log('req.body', req.body);
+    
+    const queryText = 'UPDATE koalas SET name=$1, gender=$2, age=$3, ready_to_transfer=$4, notes=$5 WHERE id=$6;';
+    pool.query(queryText, [req.body.name, req.body.gender, req.body.age, req.body.transferrable, req.body.notes, req.params.id])
     // runs on successful query
     .then((result) => {
         //console.log('query results: ', result);            

@@ -41,7 +41,8 @@
 - [x] Bootstrap the things
 
 ## PRO MODE
-- [ ] Edit information for existing koalas
-    - [x ] Client side - Edit button that converts list elements to input elements with `value` equal to that elements text
+- [x] Edit information for existing koalas
+    - [x] Client side - Edit button that converts list elements to input elements with `value` equal to that elements text
     - [x] Add a submit button
-        - [ ] On submit, PUT request to update database
+        - [x] On submit, PUT request to update database
+    - [ ] Do the buttons things (hide/show)

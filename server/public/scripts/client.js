@@ -10,6 +10,7 @@ function readySetGo() {
     $('#koalaList').on('click', '.transferButton', updateTransferStatus);
     $('#koalaList').on('click', '.deleteButton', deleteKoala);
     $('#koalaList').on('click', '.editButton', editKoala);
+    $('#koalaList').on('click', '.submitButton', submitEditedKoala);
 }
 
 function getKoalas() {
@@ -116,16 +117,6 @@ function editKoala() {
     
     let koalaNotes = $koalaBlock.find('.notes').text();
     $koalaBlock.find('.notes').replaceWith(`<p>Notes:</p><input class="new-notes" value="${koalaNotes}" />`);
-
-    // update the editedKoala object to get ready to send the updated info
-    editedKoala = {
-        id: $koalaBlock.data('id'),
-        name: $koalaBlock.find('.new-name').val(),
-        gender: $koalaBlock.find('.new-age').val(),
-        age: $koalaBlock.find('.new-gender').val(),
-        transferrable: $koalaBlock.find('.new-transferrable').val(),
-        notes: $koalaBlock.find('.new-notes').val() 
-    }
     
     // call toggleKoalaButtons
     
@@ -135,15 +126,37 @@ function editKoala() {
     // TODO later: Decide on behavior for multiple edit buttons pressed
 }
 
+
 function toggleKoalaButtons() {
 
 }
 
 function submitEditedKoala() {
+    let $koalaBlock = $(this).parents('.koalaItem');
+    // update the editedKoala object to get ready to send the updated info
+    editedKoala = {
+        id: $koalaBlock.data('id'),
+        name: $koalaBlock.find('.new-name').val(),
+        gender: $koalaBlock.find('.new-gender').val(),
+        age: $koalaBlock.find('.new-age').val(),
+        transferrable: $koalaBlock.find('.new-transferrable').val(),
+        notes: $koalaBlock.find('.new-notes').val() 
+    }
     // call toggleKoalaButtons
 
     // show Ready for Transfer, Delete buttons, 
 
     // PUT request to update the koala with editedKoala object
-        // call getKoalas on success
+    console.log('editedKoala.id', editedKoala);
+
+    $.ajax({
+        method: 'PUT',
+        url: '/koalas/update/' + editedKoala.id,
+        data: editedKoala,
+        success: function(response) {
+            console.log('response:', response);
+            // call getKoalas on success
+            getKoalas();
+        }
+    });
 }
