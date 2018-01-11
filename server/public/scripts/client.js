@@ -117,7 +117,7 @@ function editKoala() {
     
     let koalaNotes = $koalaBlock.find('.notes').text();
     $koalaBlock.find('.notes').replaceWith(`<p>Notes:</p><input class="new-notes" value="${koalaNotes}" />`);
-    
+
     // add a Submit button
     $koalaBlock.append(`<button class="btn btn-info submitButton">Submit</button>`);
 
@@ -161,3 +161,4 @@ function submitEditedKoala() {
         }
     });
 }
+
