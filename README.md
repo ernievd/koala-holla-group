@@ -42,6 +42,6 @@
 
 ## PRO MODE
 - [ ] Edit information for existing koalas
-    - [ ] Client side - Edit button that converts list elements to input elements with `value` equal to that elements text
-    - [ ] Add a submit button
+    - [x ] Client side - Edit button that converts list elements to input elements with `value` equal to that elements text
+    - [x] Add a submit button
         - [ ] On submit, PUT request to update database
